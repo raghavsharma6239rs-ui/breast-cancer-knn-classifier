@@ -206,7 +206,9 @@ Selects a real row from the project's local data/wdbc.data dataset and returns i
 
 ## 16. Developed By
 
-**Raghav Sharma**
+**Raghav Sharma(72512059)**
+**Himanshu (72512529)**
+**Bhupinder jit singh (72512743)**
 
 ## 17. Conclusion
 
