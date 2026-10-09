@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:5000/predict";
+const API_URL = "/predict";
 
 const featureGroups = [
   {
@@ -232,7 +232,7 @@ form.addEventListener("submit", async (event) => {
     displayResult(result, evaluatedDatasetSample);
   } catch (error) {
     showError(error instanceof TypeError
-      ? "Could not reach the API. Start the Flask server at 127.0.0.1:5000 and try again."
+      ? "Could not reach the API. Check that the Flask application is available and try again."
       : error.message);
   } finally {
     analyzeButton.disabled = false;
