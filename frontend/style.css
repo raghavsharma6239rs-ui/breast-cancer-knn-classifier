@@ -105,3 +105,151 @@ h2 { margin: 7px 0 4px; font: 700 17px Manrope, sans-serif; letter-spacing: -.35
 .dataset-info { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 6px; padding-top: 9px; border-top: 1px solid #e6eee8; color: #849188; font-size: 8px; }.dataset-info b { color: #3e6f53; font: 700 10px Manrope, sans-serif; }.dataset-info i { width: 3px; height: 3px; margin: 0 2px; border-radius: 50%; background: #bdcbc0; }
 .actual-comparison { margin-top: 14px; padding: 12px; border: 1px solid #e5ece7; border-radius: 8px; background: #f9fbf9; }.comparison-heading { margin-bottom: 8px; color: #819087; font-size: 7px; font-weight: 700; letter-spacing: 1px; }.comparison-row { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid #edf1ee; color: #77857d; font-size: 9px; }.comparison-row b { color: #44574c; font-weight: 700; }.comparison-verdict { margin-top: 9px; padding: 7px 8px; border-radius: 6px; font-size: 9px; font-weight: 700; }.comparison-verdict.correct { background: #eaf6ee; color: #2c805a; }.comparison-verdict.incorrect { background: #fff0ef; color: #bc4a51; }
 @media (max-width: 560px) { .demo-actions { display: flex; }.random-demo { width: 100%; }.dataset-info { gap: 5px; font-size: 7px; }.dataset-info i { margin: 0 1px; } }
+
+/* Dark Medical Tech theme */
+:root {
+  color-scheme: dark;
+  --ink: #E6EDF7;
+  --muted: #9AAAC0;
+  --line: #29384D;
+  --paper: #111B2E;
+  --canvas: #0B1220;
+  --green: #2DD4BF;
+  --green-dark: #2DD4BF;
+  --green-soft: #123A3D;
+  --red: #FDA4AF;
+  --red-soft: #3A222D;
+}
+
+body { color: #E6EDF7; background: #0B1220; }
+.sidebar { background: #0B1220; border-color: #29384D; }
+.brand, .model-card strong, h1, h2 { color: #E6EDF7; }
+.brand-period, .section-index, .kicker { color: #2DD4BF; }
+.brand-mark { background: #123A3D; }
+.brand-mark span { background: #2DD4BF; }
+.sidebar-rule, .topbar, .panel-heading, .form-actions { border-color: #29384D; }
+.sidebar-rule { background: #29384D; }
+.sidebar-label, .sidebar-foot, .breadcrumb, .breadcrumb span,
+.eyebrow, .panel-heading p, .intro, .intro strong, .feature-group-title,
+.feature-group-title span, .field label, .dataset-pill small,
+.model-card-sub, .dataset-stat, .model-card-top, .result-placeholder p,
+.prediction-caption, .confidence-row, .result-footnote, .viz-description,
+.viz-legend, .concept-note, .disclaimer, .sample-source,
+.workflow-hint, .score-explanation, .class-scores,
+.comparison-row { color: #9AAAC0; }
+.breadcrumb b { color: #E6EDF7; }
+.nav-item { color: #9AAAC0; }
+.nav-item.active { color: #2DD4BF; background: #152238; }
+.nav-dot, .status-pulse, .api-indicator i { background: #2DD4BF; }
+.status-pulse, .api-indicator i { box-shadow: 0 0 0 3px rgb(45 212 191 / 14%); }
+.live-tag { color: #2DD4BF; }
+.model-card, .panel, .dataset-pill { background: #111B2E; border-color: #29384D; }
+.dataset-stat { border-color: #29384D; }
+.dataset-stat b { color: #E6EDF7; }
+.avatar { color: #2DD4BF; background: #152238; border-color: #29384D; }
+.api-indicator { color: #9AAAC0; }
+.kicker-line { background: #2DD4BF; }
+h1 span { color: #9AAAC0; }
+.dataset-icon, .demo-icon, .info-icon, .disclaimer-icon,
+.workflow-hint span, .placeholder-orbit { color: #2DD4BF; background: #152238; }
+.feature-count { color: #9AAAC0; background: #152238; border-color: #29384D; }
+.feature-count b { color: #2DD4BF; }
+.feature-group-title { color: #E6EDF7; }
+.field label { color: #B5C2D3; }
+.field input, select, textarea {
+  color: #E6EDF7;
+  background: #0B1220;
+  border-color: #29384D;
+  color-scheme: dark;
+}
+.field input::placeholder, input::placeholder, textarea::placeholder { color: #75869E; }
+.field input:focus, select:focus, textarea:focus {
+  color: #E6EDF7;
+  background: #0B1220;
+  border-color: #2DD4BF;
+  box-shadow: 0 0 0 3px rgb(45 212 191 / 16%);
+}
+.field input[aria-invalid="true"] { border-color: #FDA4AF; box-shadow: 0 0 0 3px rgb(253 164 175 / 14%); }
+.field input:disabled, select:disabled, textarea:disabled {
+  color: #9AAAC0;
+  background: #152238;
+  border-color: #29384D;
+  opacity: 1;
+  cursor: not-allowed;
+}
+.button { color: #E6EDF7; }
+.button:focus-visible { outline-color: #2DD4BF; }
+.button:disabled { opacity: .62; }
+.button-quiet, .button-demo, .random-demo {
+  color: #B5C2D3;
+  background: #152238;
+  border: 1px solid #29384D;
+}
+.button-quiet:hover, .button-demo:hover, .random-demo:hover {
+  color: #E6EDF7;
+  background: #1B2B43;
+  border-color: #3C536F;
+}
+.random-demo { color: #2DD4BF; border-color: #286A6A; }
+.random-demo:hover { color: #7DE7D7; background: #123A3D; border-color: #2DD4BF; }
+.button-primary { color: #07151D; background: #2DD4BF; box-shadow: 0 4px 14px rgb(45 212 191 / 16%); }
+.button-primary:hover { color: #07151D; background: #5CE1D0; }
+.button-primary:disabled { color: #9AAAC0; background: #29404F; }
+.form-error { color: #FFC2CB; background: #351E2A; border-color: #74404F; }
+.demo-data { background: #152238; border-color: #29384D; }
+.demo-copy b { color: #E6EDF7; }
+.demo-copy small { color: #9AAAC0; }
+.dataset-info { color: #9AAAC0; border-color: #29384D; }
+.dataset-info b { color: #2DD4BF; }
+.dataset-info i { background: #52647B; }
+.workflow-hint span { color: #2DD4BF; background: #123A3D; }
+.workflow-hint i { color: #75869E; }
+.result-state { color: #9AAAC0; background: #152238; }
+.result-state.benign { color: #7DE7D7; background: #123A3D; }
+.result-state.malignant { color: #FFC2CB; background: #3A222D; }
+.result-placeholder strong { color: #E6EDF7; }
+.prediction-label { color: #2DD4BF; }
+.prediction-label.malignant { color: #FDA4AF; }
+.confidence-row b { color: #E6EDF7; }
+.confidence-track { background: #29384D; }
+.confidence-track span { background: #2DD4BF; }
+.confidence-track span.malignant { background: #FDA4AF; }
+.score-card, .actual-comparison { background: #152238; border-color: #29384D; }
+.score-heading { color: #B5C2D3; }
+.score-heading b { color: #FDA4AF; }
+.score-meter { background: linear-gradient(90deg, #123A3D 0%, #343A3F 50%, #3A222D 100%); box-shadow: inset 0 1px 2px rgb(0 0 0 / 25%); }
+.score-meter > span, .score-meter > span.malignant { background: #FDA4AF; box-shadow: 0 0 9px rgb(253 164 175 / 24%); }
+.class-scores span:first-child { color: #7DE7D7; }
+.class-scores span:last-child { color: #FDA4AF; }
+.model-score-label { color: #9AAAC0; }
+.comparison-heading { color: #9AAAC0; }
+.comparison-row { border-color: #29384D; }
+.comparison-row b { color: #E6EDF7; }
+.comparison-verdict.correct { color: #7DE7D7; background: #123A3D; }
+.comparison-verdict.incorrect { color: #FFC2CB; background: #3A222D; }
+.viz-panel, .result-panel { background: #111B2E; }
+.concept-tag { color: #9AAAC0; background: #152238; border-color: #29384D; }
+.viz-wrap {
+  background: radial-gradient(ellipse at center, #152238 0, #111B2E 60%, #0B1220 100%);
+  border-color: #29384D;
+}
+.viz-glow { background: #123A3D; }
+.breast-shape { border-color: #286A6A; background: linear-gradient(140deg, #1C5555, #163B49); box-shadow: inset 8px 5px 17px rgb(125 231 215 / 8%), 0 8px 24px rgb(0 0 0 / 24%); }
+.cell-dot { background: #2DD4BF; border-color: rgb(230 237 247 / 50%); box-shadow: 0 1px 5px rgb(45 212 191 / 18%); }
+.viz-center { background: rgb(11 18 32 / 76%); border-color: #52647B; }
+.viz-center-dot { background: #2DD4BF; box-shadow: 0 0 0 5px rgb(45 212 191 / 18%); }
+.viz-caption { color: #9AAAC0; }
+.viz-wrap[data-state="benign"] .viz-glow { background: #123A3D; }
+.viz-wrap[data-state="malignant"] .viz-glow { background: #492632; }
+.viz-wrap[data-state="malignant"] .breast-shape { border-color: #9B5360; background: linear-gradient(140deg, #542D3A, #382432); }
+.viz-wrap[data-state="malignant"] .cell-dot { background: #FDA4AF; box-shadow: 0 1px 6px rgb(253 164 175 / 24%); }
+.viz-wrap[data-state="malignant"] .viz-center-dot { background: #FDA4AF; box-shadow: 0 0 0 5px rgb(253 164 175 / 18%); }
+.benign-dot { background: #2DD4BF; }
+.malignant-dot { background: #FDA4AF; }
+.concept-note { background: #152238; border-color: #29384D; }
+.concept-note b { color: #B5C2D3; }
+.disclaimer { background: #111B2E; border-color: #29384D; color: #9AAAC0; }
+.disclaimer b { color: #E6EDF7; }
+.disclaimer-icon { color: #2DD4BF; background: #152238; }
+a { color: #7DE7D7; }
+::selection { color: #0B1220; background: #2DD4BF; }
