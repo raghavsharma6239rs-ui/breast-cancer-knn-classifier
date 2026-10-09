@@ -1,0 +1,22 @@
+# Python environments and bytecode
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Local editor settings
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary/editor swap files
+*.swp
+*.swo
+*~
