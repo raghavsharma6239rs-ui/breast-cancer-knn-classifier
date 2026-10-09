@@ -174,11 +174,11 @@ In Command Prompt, the activation command is:
 .venv/Scripts/activate
 ~~~
 
-Open the frontend at [http://127.0.0.1:5000/app](http://127.0.0.1:5000/app). Flask's built-in server is intended for local development and demonstrations.
+Open the frontend at https://breast-cancer-knn-classifier.onrender.com/app Flask's built-in server is intended for local development and demonstrations.
 
 ## 14. API
 
-The Flask application runs at http://127.0.0.1:5000.
+The Flask application runs at https://breast-cancer-knn-classifier.onrender.com/app 
 
 ### GET /
 
