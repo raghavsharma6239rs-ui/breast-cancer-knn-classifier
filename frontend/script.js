@@ -55,6 +55,7 @@ function resetResult() {
   resultState.textContent = "Awaiting analysis";
   resultState.className = "result-state";
   riskVisual.dataset.state = "idle";
+  clearVisualizationDots();
   riskVisual.setAttribute("aria-label", "Conceptual cellular risk visualization, awaiting analysis");
   document.getElementById("actual-comparison").hidden = true;
 }
@@ -105,9 +106,40 @@ function createFeatureFields() {
   });
 }
 
+const TOTAL_CELL_DOTS = 60;
+
+function calculateDotCounts(benignScore, malignantScore) {
+  const scoreTotal = benignScore + malignantScore;
+  const benignProportion = scoreTotal > 0 ? benignScore / scoreTotal : 0;
+  const benignDotCount = Math.max(
+    0,
+    Math.min(TOTAL_CELL_DOTS, Math.round(benignProportion * TOTAL_CELL_DOTS))
+  );
+  return {
+    benignDotCount,
+    malignantDotCount: TOTAL_CELL_DOTS - benignDotCount
+  };
+}
+
+function clearVisualizationDots() {
+  document.querySelectorAll("#cell-grid .cell-dot").forEach((dot) => {
+    dot.classList.remove("is-benign", "is-malignant");
+  });
+}
+
+function updateVisualization(benignScore, malignantScore) {
+  const { benignDotCount } = calculateDotCounts(benignScore, malignantScore);
+  const dots = [...document.querySelectorAll("#cell-grid .cell-dot")];
+  dots.forEach((dot, index) => {
+    dot.classList.remove("is-benign", "is-malignant");
+    dot.classList.add(index < benignDotCount ? "is-benign" : "is-malignant");
+  });
+  riskVisual.dataset.state = "scored";
+}
+
 function createVisualizationDots() {
   const grid = document.getElementById("cell-grid");
-  for (let index = 0; index < 42; index += 1) {
+  for (let index = 0; index < TOTAL_CELL_DOTS; index += 1) {
     const dot = document.createElement("span");
     dot.className = "cell-dot";
     grid.append(dot);
@@ -162,6 +194,7 @@ function displayResult(result, datasetSample) {
   // classes, the other class score is the complement (the two scores sum to 100).
   const malignantScore = isMalignant ? predictedClassScore : 100 - predictedClassScore;
   const benignScore = 100 - malignantScore;
+  updateVisualization(benignScore, malignantScore);
   resultPlaceholder.hidden = true;
   resultContent.hidden = false;
   document.getElementById("prediction-label").textContent = result.prediction;

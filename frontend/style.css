@@ -253,3 +253,9 @@ h1 span { color: #9AAAC0; }
 .disclaimer-icon { color: #2DD4BF; background: #152238; }
 a { color: #7DE7D7; }
 ::selection { color: #0B1220; background: #2DD4BF; }
+
+/* Score-driven cellular dot visualization */
+.cell-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: repeat(6, minmax(0, 1fr)); }
+.viz-wrap[data-state="idle"] .cell-dot { background: #52647B; border-color: #74869E; box-shadow: 0 1px 4px rgb(0 0 0 / 25%); opacity: .72; }
+.viz-wrap[data-state] .cell-dot.is-benign { background: #2DD4BF; border-color: rgb(230 237 247 / 55%); box-shadow: 0 1px 5px rgb(45 212 191 / 22%); opacity: 1; }
+.viz-wrap[data-state] .cell-dot.is-malignant { background: #FDA4AF; border-color: rgb(230 237 247 / 55%); box-shadow: 0 1px 5px rgb(253 164 175 / 24%); opacity: 1; }
